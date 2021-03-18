@@ -18,7 +18,7 @@ body{
 .main{
     /* border: 1px solid red; */
     width: 1200px;
-    height: 600px;
+    height: 550px;
     margin-top: 3em;
     margin-right: auto;
     margin-left: auto;
@@ -38,6 +38,11 @@ body{
 
 .winners{
     grid-column: 1 / 2;
+}
+
+.winner__list{
+  text-align: left;
+  line-height: 1.5;
 }
 
 .sorteo{
@@ -77,48 +82,57 @@ body{
     justify-content: space-around;
 }
 
-.button {
-    font-weight: 600;
-    color: #382b22;
-    text-transform: uppercase;
-    padding: 1.25em 2em;
-    background: royalblue;
-    color: #fff;
-    border: 2px solid #b18597;
-    border-radius: 0.75em;
-    transform-style: preserve-3d;
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
-    cursor: pointer;
-  }
-  .button::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #f9c4d2;
-    border-radius: inherit;
-    box-shadow: 0 0 0 2px #b18597;
-    transform: translate3d(0, 0.75em, -1em);
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-  }
-  .button:hover {
-    background: royalblue;
-    transform: translate(0, 0.25em);
-  }
-  .sorteo__buttons:hover::before {
-    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
-    transform: translate3d(0, 0.5em, -1em);
-  }
 
-  /* button.learn-more:active {
-    background: #ffe9e9;
-    transform: translate(0em, 0.75em);
-  }
-  button.learn-more:active::before {
-    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
-    transform: translate3d(0, 0, -1em);
-  } */
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.sorteo__button {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #4255d4;
+  border: 3px solid royalblue;
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.sorteo__button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .3);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px royalblue, 0 0.625em 0 0 rgba(0, 0, 0, .3);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.sorteo__button:hover {
+  background: #4255d4;
+  transform: translate(0, 0.25em);
+}
+.sorteo__button:hover::before {
+  box-shadow: 0 0 0 2px royalblue, 0 0.5em 0 0  rgba(0, 0, 0, .3);
+  transform: translate3d(0, 0.5em, -1em);
+}
+.sorteo__button:active {
+  background: #fff;
+  color: royalblue;
+  transform: translate(0em, 0.75em);
+}
+.sorteo__button:active::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  transform: translate3d(0, 0, -1em);
+}
