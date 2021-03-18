@@ -6,6 +6,7 @@ const iniciar = document.getElementById('iniciar')
 const numeros = document.getElementById('numeros')
 let num = 1;
 let interval;
+let avaible = false
 
 const actualizarNumero =  () => {
     var mili = new Date();
@@ -21,12 +22,15 @@ function getRandomInt(min, max) {
 
 iniciar.addEventListener('click', ()=>{
         interval = setInterval(actualizarNumero, 10)
+        avaible = true
 })
 
 
 parar.addEventListener('click', ()=>{
-        clearInterval(interval)
-        var resp = getRandomInt(2,100)
-        numeros.textContent = resp;
-        // getWinner(resp);
+        if(avaible){
+                clearInterval(interval)
+                var resp = getRandomInt(2,100)
+                numeros.textContent = resp;
+        }
+        avaible = false
 })
